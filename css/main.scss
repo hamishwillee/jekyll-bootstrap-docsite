@@ -50,8 +50,8 @@ $navtree-element-border-top-color: $gray-lighter;
 $navtree-folder-text-color:black;
 $navtree-link-text-color: $navbar-default-link-color;
 
-$navtree-icon-minus: url('../images/minus.gif?embed=true'); /* dark version of icon */
-$navtree-icon-plus: url('../images/plus.gif?embed=true'); /* dark version of icon */
+$navtree-icon-minus: url('{{ site.baseurl }}/images/minus.gif?embed=true'); /* dark version of icon */
+$navtree-icon-plus: url('{{ site.baseurl }}/images/plus.gif?embed=true'); /* dark version of icon */
 
 
 
