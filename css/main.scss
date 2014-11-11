@@ -1,6 +1,8 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+
+/* test 1 */
 @charset "utf-8";
 
 
@@ -30,12 +32,13 @@ $breadcrumb-bg:#FFF;
 
 
 
+/* test 2 */
 
 
 
+@import "_bootstrap";
 
-@import "bootstrap";
-
+/* test 3 */
 
 //Navtree
 
@@ -52,21 +55,23 @@ $navtree-link-text-color: $navbar-default-link-color;
 $navtree-icon-minus: url('{{ site.baseurl }}/images/minus.gif?embed=true'); /* dark version of icon */
 $navtree-icon-plus: url('{{ site.baseurl }}/images/plus.gif?embed=true'); /* dark version of icon */
 
+/* test 4 */
 
-
+/* import navtree */
 @import "navtree";
 
+/* test 5 */
 
 
 // Sidebar styling
 #sidebar-header {
-	background-color:$gray-lighter;
-	position: relative;
+  background-color:$gray-lighter;
+  position: relative;
     top: -20px;
 }
 
 #sidebar-header p {
-	display:inline;
+  display:inline;
     float: left;
     padding: 15px;
     font-size: 18px;
@@ -80,3 +85,4 @@ $navtree-icon-plus: url('{{ site.baseurl }}/images/plus.gif?embed=true'); /* dar
    margin: 0 !important;
 }
 
+/* test 6 */
