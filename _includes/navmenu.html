@@ -1,0 +1,12 @@
+<!-- Menu assignment -->
+{% if page.navmenu %}
+  <!-- navmenu defined for  page (in page or in defaults) -->
+
+    {% for dataitem in site.data %}
+       {% if dataitem[0] == page.navmenu %}{% assign menu = dataitem[1] %}{% endif %}
+    {% endfor %}
+
+{% endif%}
+
+<!-- PRINT Array to pass in {{menu}} -->
+{% include /functions/f_navmenu.html theTOC=menu %} 

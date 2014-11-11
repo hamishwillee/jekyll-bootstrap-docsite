@@ -1,0 +1,83 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+@import "testnav"; /* check if we keep this or not */
+
+
+
+//Breadcrumb styles (actually just the pane and positioning)
+.breadcrumb-pane { 
+  font-size: 13px;
+}
+
+
+.breadcrumb {
+  float: left;
+  padding: 20px 0px 0px 0px;
+  margin: 0 0 10px;
+}
+
+.breadcrumb-pane .edit-link {
+  margin-top: 21px;
+  float: right;
+}
+
+$breadcrumb-bg:#FFF;
+
+
+
+
+
+
+
+
+@import "bootstrap";
+
+
+//Navtree
+
+
+// Our variables
+$navtree-bg: $navbar-default-bg;
+$navtree-active-bg: azure;
+$navtree-element-listclosed-bg: $navbar-default-bg;
+$navtree-element-listopen-bg: $gray-lighter;
+$navtree-element-border-top-color: $gray-lighter;
+$navtree-folder-text-color:black;
+$navtree-link-text-color: $navbar-default-link-color;
+
+$navtree-icon-minus: url('../images/minus.gif?embed=true'); /* dark version of icon */
+$navtree-icon-plus: url('../images/plus.gif?embed=true'); /* dark version of icon */
+
+
+
+@import "navtree";
+
+
+
+// Sidebar styling
+#sidebar-header {
+	background-color:$gray-lighter;
+	position: relative;
+    top: -20px;
+}
+
+#sidebar-header p {
+	display:inline;
+    float: left;
+    padding: 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 50px;
+}
+
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+

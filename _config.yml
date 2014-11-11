@@ -1,0 +1,60 @@
+# Site settings
+title: Documentation Bootstrap Site
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: hamishwillee
+github_username:  hamishwillee
+
+# Build settings
+markdown: kramdown
+
+
+collections:
+  test_collection:
+    navmenu: navmenu_testcollection
+    output: true
+
+
+defaults:
+
+  - # default is use site toc
+    scope:
+      path: ""
+
+    values:
+      toc: toc
+      navmenu: navmenu
+
+
+  - # vary for collections 
+    scope:
+      path: ""
+      type: "test_collection"
+
+    values:
+      toc: toc_test_collection
+      navmenu: navmenu_test_collection
+
+  -
+    scope:
+      path: "test_section"
+      type: "pages"
+
+    values:
+      toc: toc_test_section
+      navmenu: navmenu_test_section
+
+  -
+    scope:
+      path: "usingtheme"
+      type: "pages"
+
+    values:
+      toc: toc_usingtheme
+      navmenu: navmenu_usingtheme
+

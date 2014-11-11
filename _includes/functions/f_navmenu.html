@@ -1,0 +1,30 @@
+<!--
+DEBUG: NAVMENU - ENTER NODE
+theTOC: {{include.theTOC}}
+-->
+{% for navitem in include.theTOC %}
+	{% if navitem.folder %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{navitem.folder}} <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+
+            {% for dropitem in navitem.contents %}
+                {% if dropitem.url %}
+                   <li class={% if page.url == dropitem.url %}"active"{% endif %}><a href="{{ dropitem.url }}">{% if dropitem.name %}{{dropitem.name}}{% else %}{% include /functions/f_titlefromurl.html url=dropitem.url %}{% endif %}</a></li>
+                {% endif %}
+                
+                {% if dropitem.divider %}
+                   <li class="divider"></li>
+                {% endif %}
+			   
+            {% endfor %}
+          </ul>
+        </li>
+	{% elsif navitem.url %}
+	  <li class="{% if page.url == navitem.url %}active{% endif %} {{navitem.align}}"><a href="{{ navitem.url }}">{% if navitem.name %}{{navitem.name}}{% else %}{% include /functions/f_titlefromurl.html url=navitem.url %}{% endif %}</a></li>
+	{% else %}
+	  Unknown navitem: {{ navitem }}
+	{% endif %}  
+{% endfor %}
+
+

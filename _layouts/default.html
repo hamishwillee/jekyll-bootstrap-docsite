@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+  <body>
+
+{% include header.html %}
+
+<div id="sidebar-header" class="visible-xs navbar-header">
+      <p>Menu</p>
+
+      <button type="button" class="navbar-toggle navbar-default btn-xs" data-toggle="collapse" data-target="#sidebar-collapse">
+        <span class="sr-only">Toggle Documentation Tree</span>
+        <span class="glyphicon glyphicon-search" style="color:black"></span>
+      </button>
+    </div>
+
+
+    <div class="container">
+
+<div class="row">
+        <div class="col-md-4  col-sm-6 nopadding">
+{% include sidebar_tree.html %} 
+</div>
+        <div class="col-md-8 col-sm-6">
+{% include breadcrumbs.html %} <!-- breadcrumb -->
+
+<h1>{{page.title}}</h1>
+{{ content }}</div>
+      </div> <!-- /row -->
+
+  
+      
+   {% include footer.html %}
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/source/assets/bower_components/jquery/dist/jquery.min.js"></script> 
+
+    <script src="/source/assets/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <!-- <script src="/source/assets/javascripts/offcanvas.js"></script> -->
+    <script src="/source/assets/javascripts/CollapsibleLists.compressed.js"></script>
+    <script src="/source/assets/javascripts/menu.js"></script>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+

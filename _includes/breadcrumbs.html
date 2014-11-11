@@ -1,0 +1,27 @@
+{% unless page.breadcrumbs == false %}
+
+<!-- Menu assignment -->
+{% if page.toc %}
+  <!-- toc defined in page or in site/collection defaults -->
+    {% for dataitem in site.data %}
+       {% if dataitem[0] == page.toc %}{% assign toc = dataitem[1] %}{% endif %}
+    {% endfor %}
+{% endif%}
+<!-- END Menu assignment -->
+
+
+
+      {% capture openfolder_array %}{% include /functions/f_navtree_open.html theTOC=toc %}{% endcapture %}
+      {% assign openfolder_array = openfolder_array | strip_newlines | split: "," %} 
+    
+      <section>
+       <div class="breadcrumb-pane clearfix hidden-xs">
+        <ol class="breadcrumb">
+          <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/index.html" itemprop="url"><span itemprop="title">Documentation</span></a></li>
+          {% include /functions/f_breadcrumb.html theTOC=toc opentree =openfolder_array %} 
+        </ol>
+        <a class="edit-link" href="GITHUB thingy {{page.url}}"><span class="icon-edit"></span> Edit</a>
+        </div>
+      </section>
+
+{% endunless %}

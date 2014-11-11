@@ -1,0 +1,11 @@
+{% assign namepage = 'NO NAME' %}
+{% for apage in site.pages %}{% if apage.url == include.url %}{% assign namepage = apage.title %}{% endif %} {% endfor %}
+
+{% for collectionname in site.collections %}
+  {% for item in collectionname %}
+     {% for doc in item.docs %}
+		{% if doc.url == include.url %}{% assign namepage = doc.title %}{% endif %} 
+        {% endfor %}
+  {% endfor %}
+{% endfor %}
+{{namepage}}

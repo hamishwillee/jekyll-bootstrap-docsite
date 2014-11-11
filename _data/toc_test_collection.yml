@@ -1,0 +1,5 @@
+- folder: TOC TEST COLLECTION
+  contents:
+   - url: /test_collection/collection_test1_1.html
+   - url: /test_collection/collection_test1_2.html
+     name: "TOC-defined name"

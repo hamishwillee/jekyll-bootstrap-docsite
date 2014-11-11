@@ -1,0 +1,47 @@
+{% assign newtree = %}
+{% for item in include.opentree %}
+{% if forloop.first %}{% else %}{% capture newtree %}{{newtree}}{{item}},{% endcapture %}{% endif %}
+{% endfor %}
+{% assign newtree = newtree | strip_newlines | split: "," %}
+{% assign folder = include.opentree | first %} 
+
+<!--
+DEBUG: NewNode f_breadcrumb
+newtree: X{{newtree}}X
+folder: Z{{folder}}Z
+include.theTOC: {{include.theTOC}}
+-->
+
+{% for navitem in include.theTOC %}
+	{% if navitem.folder %}
+
+<!--
+DEBUG: The FOLDER 
+forloop.index : {{forloop.index}}
+navitem.folder: X{{navitem.folder}}X
+folder: Z{{folder}}Z
+include.theTOC: {{include.theTOC}}
+-->
+
+	    {% if folder == navitem.folder %}
+	       	{% if navitem.contents %}
+	       	    {% if navitem.contents.first.url and navitem.contents.first.url != page.url %}
+	       	       <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{navitem.contents.first.url}}" itemprop="url"><span itemprop="title">{{navitem.folder}}</span></a></li>
+				{% else %}
+					<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">{{navitem.folder}}</span></li>
+	       	    {% endif %}
+	       	    {% assign folder = %} 
+<!--
+DEBUG: newtree.size : {{newtree.size}}
+-->
+	       	    {% if newtree.size == 0 %}
+				  <li class="active" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">{{page.title}}</span><meta itemprop="url" content="{{page.url}}" /></li>
+	       	    {% else %}
+				  {% include /functions/f_breadcrumb.html theTOC=navitem.contents opentree =newtree %}
+				{% endif %}
+			{% endif %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+

@@ -1,0 +1,19 @@
+- url: /docs/test1_1.html
+  name: TOC Defined Name
+  align: navbar-right
+
+- url: /about.html
+
+- folder: FolderName
+  contents:
+   - url: /docs/test1_2.html
+   - url: /docs/test1_3.html
+     name: Toc-set name
+   - divider: true
+   - url: /docs/folder2/test2_2.html
+
+- url: http://hamishwillee.github.io/
+  name: Site
+  align: navbar-right
+
+- url: /docs/folder2/test2_1.html

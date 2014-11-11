@@ -1,0 +1,27 @@
+
+
+
+        <div id="sidebar-collapse" class="navbar-collapse collapse">
+
+
+<!-- Sidebar navtree data assignment -->
+{% if page.toc %}
+  <!-- toc defined somewhere - in page or global defaults -->
+    {% for dataitem in site.data %}
+       {% if dataitem[0] == page.toc %}{% assign toc = dataitem[1] %}{% endif %}
+    {% endfor %}
+
+{% endif%}
+
+<!-- END sidebar navtree assignment -->
+
+
+{% capture openfolder_array %}{% include /functions/f_navtree_open.html theTOC=toc %}{% endcapture %}
+{% assign openfolder_array = openfolder_array | strip_newlines | split: "," %} 
+<!-- PRINT Array to pass in {{openfolder_array}} -->
+{% include /functions/f_navtree.html theTOC=toc outer='true' opentree =openfolder_array %} 
+
+<!-- end tree -->
+
+
+        </div><!--/.nav-collapse -->
