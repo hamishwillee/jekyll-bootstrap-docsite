@@ -9,8 +9,8 @@ $navtree-link-text-color:#eee !default;
 
 
 
-$navtree-icon-minus:url('../images/minus.png?embed=true') !default; /* using same file with .gif gives you dark symbol */
-$navtree-icon-plus:url('../images/plus.png?embed=true') !default; /* using same file with .gif gives you dark symbol */
+$navtree-icon-minus:url('{{ site.baseurl }}/images/minus.png?embed=true') !default; /* using same file with .gif gives you dark symbol */
+$navtree-icon-plus:url('{{ site.baseurl }}/images/plus.png?embed=true') !default; /* using same file with .gif gives you dark symbol */
 
 
 
