@@ -10,7 +10,7 @@ theTOC: {{include.theTOC}}
 
             {% for dropitem in navitem.contents %}
                 {% if dropitem.url %}
-                   <li class={% if page.url == dropitem.url %}"active"{% endif %}><a href="{{ dropitem.url }}">{% if dropitem.name %}{{dropitem.name}}{% else %}{% include /functions/f_titlefromurl.html url=dropitem.url %}{% endif %}</a></li>
+                   <li class={% if page.url == dropitem.url %}"active"{% endif %}><a href="{{ site.baseurl }}{{ dropitem.url }}">{% if dropitem.name %}{{dropitem.name}}{% else %}{% include /functions/f_titlefromurl.html url=dropitem.url %}{% endif %}</a></li>
                 {% endif %}
                 
                 {% if dropitem.divider %}
@@ -21,7 +21,7 @@ theTOC: {{include.theTOC}}
           </ul>
         </li>
 	{% elsif navitem.url %}
-	  <li class="{% if page.url == navitem.url %}active{% endif %} {{navitem.align}}"><a href="{{ navitem.url }}">{% if navitem.name %}{{navitem.name}}{% else %}{% include /functions/f_titlefromurl.html url=navitem.url %}{% endif %}</a></li>
+	  <li class="{% if page.url == navitem.url %}active{% endif %} {{navitem.align}}"><a href="{{ site.baseurl }}{{ navitem.url }}">{% if navitem.name %}{{navitem.name}}{% else %}{% include /functions/f_titlefromurl.html url=navitem.url %}{% endif %}</a></li>
 	{% else %}
 	  Unknown navitem: {{ navitem }}
 	{% endif %}  

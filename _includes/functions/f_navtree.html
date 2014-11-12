@@ -38,7 +38,7 @@ include.opentree.first: Z{{include.opentree | first}}Z
 		</li>
 
 	{% elsif navitem.url %}
-	  <li class={% if page.url == navitem.url %}"active"{% endif %}><a href="{{ navitem.url }}">{% if navitem.name %}{{navitem.name}}{% else %}{% include /functions/f_titlefromurl.html url=navitem.url %}{% endif %}</a></li>
+	  <li class={% if page.url == navitem.url %}"active"{% endif %}><a href="{{ site.baseurl }}{{ navitem.url }}">{% if navitem.name %}{{navitem.name}}{% else %}{% include /functions/f_titlefromurl.html url=navitem.url %}{% endif %}</a></li>
 	{% else %}
 	  Unknown navitem: {{ navitem }}
 	{% endif %}

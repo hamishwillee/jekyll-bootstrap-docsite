@@ -26,7 +26,7 @@ include.theTOC: {{include.theTOC}}
 	    {% if folder == navitem.folder %}
 	       	{% if navitem.contents %}
 	       	    {% if navitem.contents.first.url and navitem.contents.first.url != page.url %}
-	       	       <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{navitem.contents.first.url}}" itemprop="url"><span itemprop="title">{{navitem.folder}}</span></a></li>
+	       	       <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ site.baseurl }}{{navitem.contents.first.url}}" itemprop="url"><span itemprop="title">{{navitem.folder}}</span></a></li>
 				{% else %}
 					<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">{{navitem.folder}}</span></li>
 	       	    {% endif %}
