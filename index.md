@@ -3,18 +3,19 @@ layout: default
 title: Welcome
 ---
 
-This site demonstrates a prototype Jekyll *documentation* theme based on bootstrap. It features a top navbar, a sidebar Table Of Contents (TOC) and a page breadcrumb. The layout scales for mobile devices and shrinks the table of contents. 
+This site demonstrates a prototype mobile-friendly Jekyll *documentation* theme based on bootstrap. The site uses no plugins and can be (is) automatically built by Github's version of Jekyll.
 
-The main feature of this theme is that the TOC and navbar are defined in datafiles, and that they can be assigned to pages directly, or based on their parent folder or collection. This allows single sites to be built to support multiple documentation sets (possibly for related products).
+Navigation is through a Table of Contents (TOC) sidebar, breadcrumb and navbar. The structure of these navigation elements is defined in data files, and can be automatically applied to articles based on their collection, parent folder, or in the page metadata. This allows multiple documentation sets to be built within a single site. The breadcrumb for the page is calculated from the TOC data structure.
 
-In addition, the version of bootstrap used is bootstrap-SASS. Jekyll's in-built support for SASS means that the appearance of the theme can easily be changed using bootstrap varianbls in **/css/main.scss**.
+The theme uses [bootstrap-sass](https://github.com/twbs/bootstrap-sass) (bootstrap-sass-official v3.2.0+2 from bower). This provides access to all the [standard bootstrap components](http://getbootstrap.com/components/) and means that the site appearance can be radically changed using the normal bootstrap variables.
+
+Currently the project is a prototype; it is full of debug information and it lacks features that a real site might need (SEO integration, analytics, feedback mechanisms, search). Developers are welcome to extend or fork the project on [Github here](https://github.com/hamishwillee/jekyll-bootstrap-docsite/).
 
 
-<div class="alert alert-success" role="alert"><p>Jekyll has primarily been used for blogging, and there are few themes for supporting *documentation* projects.</p> 
+<div class="alert alert-success" role="alert"><p>This project borrows heavily from the <a href="https://sendgrid.com/docs/index.html">SendGrid Docs</a> theme, and uses the same CSS and JavaScript for the TOC. </p>
 
-<p>The best I've found so far is the <a href="https://sendgrid.com/docs/index.html">SendGrid Docs</a> theme, which uses a plugin to generate a table of contents (TOC) from the folder structure and displays it on the sidebar.  This approach makes the project very easy for users to structure, but means that the project cannot be run using the "inbuilt" Jekyll on Github pages. It also supports only a single TOC. </p>
-
-<p>My project uses the same idea (and the same CSS and javascript for the sidebar) but instead defines the TOC (and sidebar) as yml data files.</p></div>
+<p>SendGrid a "real" documentation set for a commerical product, and is hence more complete and robust than this project. One of its nicest features is that it uses plugins to generate the TOC and Breadcrumbs based on the folder structure of the source code (this can be much easier for authors to manage than an explicit TOC). It also uses an asset pipeline, which can result in significantly compressed CSS and javascript, along with better management of dependencies (I have chosen not to use that approach in order to allow this project to be built using Github's Jekyll).</p>
+</div>
 
 
 

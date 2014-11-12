@@ -26,7 +26,7 @@ collections:
 
 defaults:
 
-  - # default is use site toc
+  - # Global default is use structures in /_data/toc.yml and /_data/navmenu.yml
     scope:
       path: ""
 
@@ -35,7 +35,7 @@ defaults:
       navmenu: navmenu
 
 
-  - # vary for collections 
+  - # For a collection you can specify the "type" using the collection name
     scope:
       path: ""
       type: "test_collection"
@@ -44,7 +44,7 @@ defaults:
       toc: toc_test_collection
       navmenu: navmenu_test_collection
 
-  -
+  - # To specify values for a particular folder path, specify this in the scope > path variable.
     scope:
       path: "test_section"
       type: "pages"
@@ -53,12 +53,5 @@ defaults:
       toc: toc_test_section
       navmenu: navmenu_test_section
 
-  -
-    scope:
-      path: "usingtheme"
-      type: "pages"
 
-    values:
-      toc: toc_usingtheme
-      navmenu: navmenu_usingtheme
 

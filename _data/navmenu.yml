@@ -1,19 +1,12 @@
-- url: /docs/test1_1.html
-  name: TOC Defined Name
+- url: /about.html
   align: navbar-right
 
-- url: /about.html
-
-- folder: FolderName
+- folder: Tests
+  align: navbar-right
   contents:
-   - url: /docs/test1_2.html
-   - url: /docs/test1_3.html
-     name: Toc-set name
+   - url: /test_collection/collection_test1_1.html
+     name: Collection
+   - url: /test_section/section_test1_1.html
+     name: Folders
    - divider: true
    - url: /docs/folder2/test2_2.html
-
-- url: http://hamishwillee.github.io/
-  name: Site
-  align: navbar-right
-
-- url: /docs/folder2/test2_1.html

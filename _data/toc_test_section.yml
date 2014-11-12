@@ -1,23 +1,7 @@
 - folder: TOC SECTION
   contents:
-   - url: /docs/test1_1.html
-   - url: /docs/test1_2.html
-     name: Toc-set name
-   - folder: Folder2
-     contents:
-      - url: /docs/folder2/test2_2.html
-        name: Toc-set name 2
-      - url: /docs/folder2/test2_1.html
-      - folder: Folder3
-        contents:
-         - url: /docs/folder3/test3_1.html
-
-- folder: Folder2
-  contents:
-   - url: /docs/folder2/test2_3.html
-
-- url: /docs/folder3/test3_2.html
-  name: Some random name
+   - url: /test_section/section_test1_1.html
+   - url: /test_section/section_test1_2.html
 
 - url: /test_collection/collection_test1_1.html
   name: Collection
