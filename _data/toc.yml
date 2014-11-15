@@ -17,3 +17,7 @@
      name: Section (folder)
 
 
+   - folder: Tests
+     contents:
+      - url: /test_functions/array_functions.html
+

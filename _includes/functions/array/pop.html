@@ -1,0 +1,12 @@
+{% assign arraystring = "" %}
+{% if include.pop %}
+{% assign pop_num = include.pop | plus:'0' %}
+{% else %}
+{% assign pop_num = '1' | plus:'0' %}
+{% endif %}
+{% for item in include.array %}
+{% if forloop.rindex0 >= pop_num %}
+{% capture arraystring %}{{arraystring}}{{item | strip_newlines}}{% unless forloop.rindex0 == pop_num %},{% endunless %}{% endcapture %}
+{% endif %}
+{% endfor %}
+{{arraystring | strip_newlines}}

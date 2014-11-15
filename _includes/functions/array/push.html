@@ -1,0 +1,7 @@
+{% assign arraystring = "" %}
+{% assign arraysize = include.array | size %}
+{% for item in include.array %}
+{% capture arraystring %}{{arraystring}}{{item | strip_newlines}}{% unless forloop.last %},{% endunless %}{% endcapture %}
+{% endfor %}
+{% capture arraystring %}{{arraystring}}{% if arraysize > 0 %},{% endif%}{{include.add}}{% endcapture %}
+{{arraystring | strip_newlines}}
