@@ -31,27 +31,6 @@ defaults:
       path: ""
 
     values:
-      toc: toc
+      toc: bigtoc
       navmenu: navmenu
-
-
-  - # For a collection you can specify the "type" using the collection name
-    scope:
-      path: ""
-      type: "test_collection"
-
-    values:
-      toc: toc_test_collection
-      navmenu: navmenu_test_collection
-
-  - # To specify values for a particular folder path, specify this in the scope > path variable.
-    scope:
-      path: "test_section"
-      type: "pages"
-
-    values:
-      toc: toc_test_section
-      navmenu: navmenu_test_section
-
-
 
